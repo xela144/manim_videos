@@ -9,7 +9,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "manimgl>=1.6.1",
+    "manimgl @ git+https://github.com/xela144/manim.git",
     "setuptools<69",
 ]
 
