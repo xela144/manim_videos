@@ -12,3 +12,6 @@ dependencies = [
     "manimgl>=1.6.1",
     "setuptools<69",
 ]
+
+[tool.setuptools.packages.find]
+where = ["src"]
