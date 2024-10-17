@@ -47,29 +47,29 @@ class LorenzAttractor(InteractiveScene):
         self.add(axes)
 
         # Add the equations
-        equations = Tex(
-            R"""
-            \begin{aligned}
-            \frac{\mathrm{d} x}{\mathrm{~d} t} & =\sigma(y-x) \\
-            \frac{\mathrm{d} y}{\mathrm{~d} t} & =x(\rho-z)-y \\
-            \frac{\mathrm{d} z}{\mathrm{~d} t} & =x y-\beta z
-            \end{aligned}
-            """,
-            t2c={
-                "x": RED,
-                "y": GREEN,
-                "z": BLUE,
-            },
-            font_size=30
-        )
-        equations.fix_in_frame()
-        equations.to_corner(UL)
-        equations.set_backstroke()
-        self.play(Write(equations))
+        #equations = Tex(
+        #    R"""
+        #    \begin{aligned}
+        #    \frac{\mathrm{d} x}{\mathrm{~d} t} & =\sigma(y-x) \\
+        #    \frac{\mathrm{d} y}{\mathrm{~d} t} & =x(\rho-z)-y \\
+        #    \frac{\mathrm{d} z}{\mathrm{~d} t} & =x y-\beta z
+        #    \end{aligned}
+        #    """,
+        #    t2c={
+        #        "x": RED,
+        #        "y": GREEN,
+        #        "z": BLUE,
+        #    },
+        #    font_size=30
+        #)
+        #equations.fix_in_frame()
+        #equations.to_corner(UL)
+        #equations.set_backstroke()
+        #self.play(Write(equations))
 
         # Compute a set of solutions
         epsilon = 1e-5
-        evolution_time = 30
+        evolution_time = 300
         n_points = 10
         states = [
             [10, 10, 10 + n * epsilon]
@@ -110,7 +110,3 @@ class LorenzAttractor(InteractiveScene):
             ),
             run_time=evolution_time,
         )
-
-
-class EndScreen(PatreonEndScreen):
-    pass
